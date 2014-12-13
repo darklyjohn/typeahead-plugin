@@ -1,0 +1,47 @@
+<!doctype html>
+<html ng-app="ui.bootstrap.demo">
+  <head>
+
+    <script src="lib/jquery/jquery-2.1.0.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/ui-bootstrap-tpls-0.12.0.js"></script>
+    <script src="lib/igTypeahead.js"></script>
+    <script src="example.js"></script>
+    <!--<script src="typeaheadMusica.js"></script>-->
+    <link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+
+<script type="text/ng-template" id="customTemplate.html">
+  <a>
+      <img ng-src="http://upload.wikimedia.org/wikipedia/commons/thumb/{{match.model.flag}}" width="16">
+      <span bind-html-unsafe="match.label | typeaheadHighlight:query"></span>
+  </a>
+</script>
+<div class='container-fluid' ng-controller="TypeaheadCtrl">
+<form name="form" class="form-control">
+    <h4>Static arrays</h4>
+    <pre>Model: {{selected | json}}</pre>
+    <magic-drop-down data="states">
+
+    </magic-drop-down>
+    <!--<input id="my-input-field" type="text" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control" typeahead-on-select="onSelect()">-->
+
+
+    <!--<h4>Asynchronous results</h4>-->
+    <!--<pre>Model: {{asyncSelected | json}}</pre>-->
+    <!--<input type="text" ng-model="asyncSelected" placeholder="Locations loaded via $http" typeahead="address for address in getLocation($viewValue)" typeahead-loading="loadingLocations" class="form-control">-->
+    <!--<i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>-->
+
+    <!--<typeahead choice="selection" list="states"></typeahead>-->
+
+
+    <!--<h4>Custom templates for results</h4>-->
+    <!--<pre>Model: {{customSelected | json}}</pre>-->
+    <!--<input type="text" ng-model="customSelected" placeholder="Custom template" typeahead="state as state.name for state in statesWithFlags | filter:{name:$viewValue}" typeahead-template-url="customTemplate.html" class="form-control">-->
+
+</form>
+    </div>
+  </body>
+</html>

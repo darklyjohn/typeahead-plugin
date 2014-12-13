@@ -1,0 +1,8 @@
+<div>
+    <input id="my-input-field" type="text" ng-model="selected"
+           typeahead="state for state in states | filter:$viewValue | limitTo:8"
+           class="" typeahead-on-select="onSelect()" >
+    <span><button class="btn btn-default" ng-show="showingButton()" ng-click="doSomething()">My Button</button>
+</span>
+</div>
+
