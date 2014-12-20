@@ -19,7 +19,7 @@ angular.module('ui.bootstrap.demo').controller('TypeaheadCtrl', function ($scope
     ];
 
 });
-
+//Manu has joined the project
 
 angular.module('ui.bootstrap.demo').directive('magicDropDown', function () {
     return {
